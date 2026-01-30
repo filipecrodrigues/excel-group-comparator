@@ -1,0 +1,164 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
+/* Layout geral */
+.container {
+  min-height: 100vh;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6f8;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Card responsivo */
+.card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+/* Título */
+.card h2 {
+  margin-bottom: 8px;
+  color: #2c3e50;
+  font-size: 22px;
+}
+
+/* Subtexto */
+.card p {
+  margin-bottom: 24px;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+/* Upload */
+.upload {
+  display: block;
+  padding: 16px;
+  border: 2px dashed #4caf50;
+  border-radius: 8px;
+  color: #4caf50;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.upload:hover {
+  background: #e8f5e9;
+}
+
+.upload input {
+  display: none;
+}
+
+/* Nome do arquivo */
+.file-name {
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 18px;
+  word-break: break-all;
+}
+
+/* Botão */
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #4caf50;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background: #43a047;
+}
+
+button:disabled {
+  background: #9e9e9e;
+  cursor: not-allowed;
+}
+
+/* Botão secundário */
+button.secondary {
+  margin-top: 12px;
+  background: transparent;
+  color: #4caf50;
+  border: 2px solid #4caf50;
+}
+
+button.secondary:hover:not(:disabled) {
+  background: #e8f5e9;
+}
+
+button.secondary:disabled {
+  border-color: #9e9e9e;
+  color: #9e9e9e;
+}
+
+/* Barra de progresso */
+.progress-container {
+  width: 100%;
+  height: 18px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 16px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #4caf50;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  line-height: 18px;
+  transition: width 0.3s ease;
+}
+
+
+/* ===================== */
+/* RESPONSIVIDADE */
+/* ===================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .card {
+    padding: 28px;
+  }
+
+  .card h2 {
+    font-size: 20px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  .card {
+    padding: 24px;
+  }
+
+  .card h2 {
+    font-size: 18px;
+  }
+
+  .upload {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 14px;
+  }
+}

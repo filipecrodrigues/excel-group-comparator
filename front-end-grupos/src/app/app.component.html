@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="card">
+
+    <h2>Comparação de Grupos</h2>
+    <p>Arraste o arquivo Excel ou clique para escolher</p>
+
+    <!-- ÁREA DE UPLOAD COM DRAG -->
+    <label
+      class="upload"
+      (dragover)="onDragOver($event)"
+      (drop)="onDrop($event)">
+
+      <input
+        type="file"
+        accept=".xls,.xlsx"
+        (change)="onFile($event)" />
+
+      <span>Arraste o arquivo ou clique para escolher</span>
+    </label>
+
+    <!-- Nome do arquivo -->
+    <div class="file-name" *ngIf="nomeArquivo">
+      {{ nomeArquivo }}
+    </div>
+
+    <!-- Barra de progresso -->
+    <div class="progress-container" *ngIf="carregando">
+      <div class="progress-bar" [style.width.%]="progresso">
+        {{ progresso }}%
+      </div>
+    </div>
+
+    <!-- Botão comparar -->
+    <button
+      (click)="enviar()"
+      [disabled]="!arquivo || carregando">
+      {{ carregando ? 'Processando...' : 'Comparar' }}
+    </button>
+
+    <!-- Botão template -->
+    <button
+      class="secondary"
+      (click)="baixarTemplate()"
+      [disabled]="carregando">
+      Baixar template Excel
+    </button>
+
+  </div>
+</div>
